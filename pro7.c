@@ -1,22 +1,27 @@
+// parameters passing by address due to this we can occur the changes from called fuction to calling function 
+// while there use of base address at the time of passing 
+// print the array by using the parameter passing by address 
 #include<stdio.h> 
-myfun(int x);
+void myfun(int p); 
+int sum=0; 
+void addition(int p) ;
 int main()
-{
-	myfun(1);
+{ 
+    int num[4]={5,8,6,7};  
+    int i;
+   for(i=0;i<=3;i++)
+   {
+       addition(num[i]);
+   }
+    printf("The addition of the numbers is %d",sum);
+
 } 
-myfun(int x)
+
+void addition(int p) 
 {
-	if(x==21) 
-	{
-		return ;
-	} 
-	else
-	{
-		if(x%2==0)
-		{
-			printf("\n%d",x); 
-		}  
-		myfun(x+1);
-		
-	}
+	
+    sum=sum+p;
+   
+	
 }
+

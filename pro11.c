@@ -1,21 +1,15 @@
-#include<stdio.h>  
-float ans(int rad);
-float san(int rad);
+//  runtime and compiletime memory 
+#include<stdio.h>
 int main()
 {
-	int rad; 
-	float ans,san;
-	printf("Enter the radius of the circle ");
-	scanf("%d",&rad);
-	ans=area(rad);
-	san=circum(rad);
-	printf("The area of the circle & circumference is %f",ans,san);
-} 
-float ans(int rad)
-{
-	return 3.14*rad*rad;
-} 
-float san(int rad)
-{
-	return 3.14*rad*2;
-} 
+	int num[5]; 
+	int n; 
+	int i;
+	printf("fjsfsfs");
+	scanf("%d",&n);
+	printf("%d",n);   // here we don't know what will be the value of the n which will be given by the user so there maybe memory shotage or wastage so it is inlogicall 
+	for(i=0;i<=n-1;i++)
+	{
+		scanf("%d",(num+i));
+	}
+}

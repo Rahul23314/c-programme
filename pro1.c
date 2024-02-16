@@ -1,16 +1,6 @@
-#include <stdio.h>
-    void main()
-    {
-        double ch;
-        printf("enter a value between 1 to 2:");
-        scanf("%lf", &ch);
-        switch (ch)
-        {
-        case 1:
-            printf("1");
-            break;
-        case 2:
-            printf("2");
-            break;
-        }
-    }
+#include<stdio.h>
+int main()
+{
+	int num[5]={5,6,3,9,4};
+	printf("%d",num[1]);    // this is the index of the array.
+}

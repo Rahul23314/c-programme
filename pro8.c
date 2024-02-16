@@ -1,21 +1,28 @@
-#include<stdio.h>  
-void myfun(int x);
+// change the total array and print the new and old also
+#include<stdio.h> 
+int i; 
+
+void array(int *p); 
 int main()
-{
-	myfun(1);
-} 
-void myfun(int x)
-{
-	if(x==21) 
+{ 
+  int num[4]={9,8,5,1};
+
+	for(i=0;i<=3;i++) 
 	{
-		return ;
+		printf("%d",num[i]);
 	} 
-	else 
+  array(num);
+ 	for(i=0;i<=3;i++) 
 	{
-		if(x%2!=0)
-		{
-			printf("\n%d is odd",x);
+		printf("\t%d",num[i]);
 	}
-		myfun(x+1);
-	}
+	
+} 
+void array(int *p)
+{
+	*(p)=15;
+	*(p+1)=58; 
+	*(p+2)=14; 
+	*(p+3)=25;
+	
 }

@@ -1,19 +1,20 @@
+// parameters passing by value is not profitable because only one elemnt accesible at a time.
+// parameters passing of array to function is by address 
 #include<stdio.h> 
-void myfun(int x);
+void addition(int x);
 int main()
 {
-	myfun(20);
-} 
-void myfun(int x) 
-{
-	if(x==10) 
+	int num[4]={6,3,8,7};
+	int i;
+	for(i=0;i<=3;i++)
 	{
-	return;	
-	} 
-	else 
+		addition(num[i]);
+	}  
+}
+	void addition(int x)
 	{
-		
-		myfun(x-1);
-		printf("\n%d",x);    // on the back tracing the ans will be on the decending order
+		int sum=0;
+		sum=sum+x;
+		printf("%d",sum);
 	}
-} 
+

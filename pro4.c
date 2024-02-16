@@ -1,19 +1,14 @@
-// o/p-1,2,3,4,5
-#include<stdio.h> 
-void myfun(int x);
+#include<stdio.h>
 int main()
 {
-	myfun(1);
-} 
-void myfun(int x)
-{
-	if(x<6)
-	{     printf("%d",x); 
-	     myfun(x+1);
-	
-	} 
-	else
+	int num[8]={10,8,45,76,10,79,42,87} ;
+	int i,count=0;
+	for(i=0;i<=7;i++) 
 	{
-	 return ;
-	}
+		if(num[i]==10) 
+		{
+			count++;
+		}
+	} 
+	printf("count=%d",count);
 }

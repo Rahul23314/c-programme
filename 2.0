@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+	printf("Main starts");
+	myfun(1);
+	printf("Main Ends");
+	
+} 
+void myfun(int x)
+{
+	if(x<=3) 
+	{
+		myfun(x+1);
+	}
+}
+}

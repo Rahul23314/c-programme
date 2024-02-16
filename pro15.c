@@ -2,22 +2,22 @@
 #include<stdlib.h>
 int main()
 {
-	int n,*p,i; 
-	int count=0;
-	printf("Enter your integers=");
+	int n,i; 
+	char *p;
+	int count=0; 
+	printf("Enter the no.of characters=");
+	scanf("%d",&n); 
 	scanf("%d",&n);
-	p=(int*)malloc(n*sizeof(int));
+	p=(char*)malloc(n*sizeof(char));
 	for(i=0;i<=n-1;i++)
 	{
 		scanf("%d",(p+i));
-		
 	} 
 	for(i=0;i<=n-1;i++)
 	{
-		if(*(p+i)%2==1)
+		if(*(p+i)>='A'&&*(p+i)<='Z')
 		{
 			count++;
 		}
-	} 
-	printf("Total no. of odd numbers are %d",count);
+	}
 }

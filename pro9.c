@@ -1,34 +1,17 @@
+// print the given array
 #include<stdio.h> 
-void myfun(int min,int max );
+void printArray(int *x);
 int main()
 {
-	int num1,num2,max,min;
-	printf("Enter the two numbers =");
-	scanf("%d%d",&num1,&num2);
-	if(num1>num2)
-	{
-		max=num1;
-		min=num2;
-	} 
-	else 
-	{
-		max=num2;
-		min=num1;
-	} 
-	myfun(min,max);
+	int num[4]={6,5,47,20};
+	printArray(num);    // printArray(&num[0])  
+	                   // *(p+i)=p[i]
 } 
-void myfun(int min,int max )
+void printArray(int *x)
 {
-	if(min>max)
-	{
-		return;
-	} 
-	else
-	{
-	  if(min%2!=0)	
-	  {
-	  	printf("\n%d",min);
-	  } 
-	  myfun(min+1,max);
-	}
+   int i;
+   for(i=0;i<=3;i++) 
+   {
+   	printf("%d",*(x+i));
+   }
 }

@@ -1,19 +1,22 @@
-#include<stdio.h> 
-void myfun(int x);
+#include<stdio.h>
 int main()
 {
-	myfun(11);
-}
-void myfun(int x)
-{
-	if(x==21)
-	{ 
-	 return;
+	int num[6]={47,10,87,98,65,7}; 
+	int i,flag=0;
+	printf("Enter the number=");
+	for(i=0;i<=5;i++) 
+	{
+		if(num[i]==10)
+		{
+			printf("\narray contains 10");  
+			flag=1;
+			break; 
+			
+		} 
+	
 	} 
-	else
-	{  
-	printf("\n%d",x);     // during the recursion 
-	myfun(x+1);
-		
+	if (flag==0)
+	{
+		printf("Arrays not continng 10");
 	}
 }
