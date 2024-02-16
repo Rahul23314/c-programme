@@ -1,0 +1,241 @@
+#include<iostream> 
+using namespace std;
+struct Student {
+int rollno;
+string name;
+double sgpa;
+
+};
+
+//defining  a class
+class SE11{
+   
+    int n;
+    struct Student S[50];
+   
+    public: void input();
+            void display();
+            void bubble_sort();
+            void insertion_sort();
+            void quick_sort(int start,int end);
+            int  partition(int start,int end);
+            void linear_search();
+            void binary_search();
+            void bubble_sort_name();
+    int r_size()
+    {return n;}
+    SE11(){
+        n=15;
+       
+    }
+};
+
+//function for taking input
+void SE11::input(){
+
+    S[0]={1,"akhil",8.4};
+    S[1]={3,"swaraj",9.6};
+    S[2]={6,"digamber",5.1};
+    S[3]={5,"lucky",5.6};
+    S[4]={7,"ganesh",5.6};
+    S[5]={12,"hanif",6.6};
+    S[6]={15,"gresh",3.5};
+    S[7]={25,"shajad",8.8};
+    S[8]={20,"sameer",6.0};
+    S[9]={22,"yuvraj",5.4}; 
+    S[10]={16,"tanvir",7.5};
+    S[11]={18,"pitter",2.6};
+    S[12]={32,"bheem",3.6};
+    S[13]={23,"rahul",8.1};
+    S[14]={29,"deepak",9.0};  
+  
+       
+ 
+}
+
+//function for display information
+void SE11::display(){
+cout<<endl<<"Roll no : "<<"Name : " <<"Sgpa : "<<endl;    
+    for(int i=0;i<n;i++){
+        cout<<"\n"<<S[i].rollno<<" ";
+        cout<<"\n\t  "<<S[i].name<<" ";
+        cout<<"\t  "<<S[i].sgpa<<" "<<endl;     
+        
+    }
+}
+
+//function for bubble sort
+void SE11::bubble_sort(){
+   
+    for(int i=1;i<n;i++){
+     
+        for(int j=0;j<n-i;j++){
+             if(S[j].rollno>S[j+1].rollno){
+                swap(S[j],S[j+1]);    
+             }
+        }
+   
+    cout<<"Sorted list "<<i<<endl;
+       display();
+}
+}
+
+// function for insertion sort
+void SE11::insertion_sort(){
+        for(int i=1;i<n;i++){
+            struct Student s=S[i];
+            string  temp=S[i].name;
+            int j=i-1;
+
+            while (j >= 0 && S[j].name > temp)
+            {
+                    S[j+1]=S[j];
+                    j--;  
+            }      
+            S[j+1]=s;
+       
+        cout<<"Sorted list : "<<endl;
+        display();
+}
+}
+
+//function for quick sort
+void SE11::quick_sort(int start,int end){
+
+    if (start < end)  
+    {  
+        int p = partition( start, end);  
+        quick_sort( start, p - 1);  
+        quick_sort( p + 1, end);  
+    }
+}
+
+//function for partition
+int  SE11::partition(int start,int end){
+    int pivot = S[end].sgpa; // pivot element  
+    int i = (start - 1);  
+ 
+    for (int j = start; j <= end - 1; j++)  
+    {  
+        // If element is smaller than the pivot  
+        if (S[j].sgpa > pivot)  
+        {  
+            i++; // increment index of smaller element  
+            struct Student t = S[i];  
+            S[i] = S[j];  
+            S[j] = t;  
+        }  
+    }  
+    struct Student t1 = S[i+1];  
+    S[i+1] = S[end];  
+    S[end] =  t1;
+   
+    cout<<"Sorted list : "<<endl;
+        display();
+         
+    return (i + 1);  
+}
+
+//function for linear search
+void SE11::linear_search(){
+    double tsgpa;
+    cout<<"Enter Sgpa do you want to find : ";
+    cin>>tsgpa;
+    cout<<endl;
+    for(int i=0;i<n;i++){
+        if(tsgpa==S[i].sgpa){
+            cout<<"The Roll no of student of sgpa "<<tsgpa<<" is :"<<S[i].rollno<<endl;
+        }
+    }
+
+  
+}
+
+//function for binary search
+void SE11::binary_search(){
+    string tname;
+    cout<<"Enter the name of student you want to find : ";
+    cin>>tname;
+    int l=0;
+    int h=n-1;
+   
+    while(l<=h){
+        int mid=(l+h)/2;
+        if(tname==S[mid].name){
+            cout<<"Roll no of student you wnat to find "<<S[mid].rollno<<endl;
+            break;
+        }
+        else if(tname<S[mid].name){
+            h=mid-1;
+        }
+        else if(tname>S[mid].name){
+            l=mid+1;
+        }
+       
+    }
+    if(l>=h){
+    cout<<"Element not found";
+    }
+   
+
+}
+//function for sorting a name
+void SE11::bubble_sort_name(){
+   
+    for(int i=1;i<n;i++){
+       
+        for(int j=0;j<n-i;j++){
+             if(S[j].name>S[j+1].name){
+                swap(S[j],S[j+1]);  
+             }
+        }
+    }
+   
+}
+int main()
+{
+    
+    {
+       
+    cout<<"Your entered data in Main"<<endl;
+    SE11 SD;
+    SD.input();
+    SD.display();
+    int choice;
+    int k;
+    cout<<"Enter 1 for Sorting Roll no(using Bubble sort)"<<endl;
+    cout<<"Enter 2 for sorting Name alphabetically (Insertion sort)"<<endl;
+    cout<<"Enter 3 for finding first ten toppers in class(Quick sort)"<<endl;
+    cout<<"Enter 4 for finding students acoording to sgpa(linear search)"<<endl;
+    cout<<"Enter 5 for finding student by name(binary search)"<<endl;
+
+    cin>>choice;
+    switch (choice)
+    {
+    case 1 :
+        SD.bubble_sort();
+        //cout<<"Printing the sorted array according to roll no";
+       
+        break;
+   
+    case 2:
+            SD.insertion_sort();
+            break;
+    case 3:
+    k=SD.r_size();
+            SD.quick_sort(0,k-1);
+            cout<<"The top Students are : "<<endl;
+            SD.display();
+            break;
+    case 4:
+            SD.linear_search();
+            break;
+    case 5:
+             //SD.bubble_sort_name();
+             SD.insertion_sort();
+             SD.binary_search();
+    default:
+            break;
+       }
+    }
+}
