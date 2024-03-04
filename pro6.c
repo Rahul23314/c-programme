@@ -1,19 +1,15 @@
-#include<stdio.h> 
-void myfun(int x);
+#include<stdio.h>
+void isalpha(char ch);
 int main()
 {
-	myfun(20);
+	char ch;
+	printf("Enter the alphabet=");
+	scanf("%c",&ch);
 } 
-void myfun(int x) 
+void isalpha(char ch)
 {
-	if(x==10) 
+	if((ch>='A'&& ch<='Z')||(ch>='a'&&ch<='z'))
 	{
-	return;	
-	} 
-	else 
-	{
-		
-		myfun(x-1);
-		printf("\n%d",x);    // on the back tracing the ans will be on the decending order
+		printf("alphabet");
 	}
-} 
+}

@@ -1,16 +1,11 @@
-#include <stdio.h>
-    void main()
-    {
-        double ch;
-        printf("enter a value between 1 to 2:");
-        scanf("%lf", &ch);
-        switch (ch)
-        {
-        case 1:
-            printf("1");
-            break;
-        case 2:
-            printf("2");
-            break;
-        }
-    }
+#include<stdio.h> 
+int g=5;
+int main()
+{ 
+	int g=8;
+		{
+			printf("\n inner g=%d",g);
+		} 
+	printf("\n outer g=%d",g);
+	
+}
