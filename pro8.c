@@ -1,21 +1,6 @@
-#include<stdio.h>  
-void myfun(int x);
+// scan a and b scan their pointer,print addition using pointer 
+#include<stdio.h>
 int main()
 {
-	myfun(1);
-} 
-void myfun(int x)
-{
-	if(x==21) 
-	{
-		return ;
-	} 
-	else 
-	{
-		if(x%2!=0)
-		{
-			printf("\n%d is odd",x);
-	}
-		myfun(x+1);
-	}
+	
 }

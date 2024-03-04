@@ -1,19 +1,17 @@
-#include<stdio.h> 
-void myfun(int x);
+// scan the element of the array having the 4 element present 
+#include<stdio.h>
 int main()
 {
-	myfun(11);
-}
-void myfun(int x)
-{
-	if(x==21)
-	{ 
-	 return;
-	} 
-	else
-	{  
-	printf("\n%d",x);     // during the recursion 
-	myfun(x+1);
-		
-	}
+  int num[4]; 
+  int i;
+  //int *p;
+ // p=&num[0];
+  for(i=0;i<=3;i++)
+  {
+  	scanf("%d",&num[i]);   // here instead of the p+i we can put the p+0,p+1 or &num[0],&num[1],&num[2]
+  } 
+  for(i=0;i<=3;i++)
+  {
+  	printf("%d",*(num+i));
+  }
 }

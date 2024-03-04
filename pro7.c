@@ -1,22 +1,17 @@
-#include<stdio.h> 
-myfun(int x);
+#include<stdio.h>
 int main()
 {
-	myfun(1);
-} 
-myfun(int x)
-{
-	if(x==21) 
+	char ch;
+	char *pch; 
+	pch=&ch;
+	printf("Enter the character=");
+	scanf("%c",pch);
+	if(*pch>='A'&&*pch<='Z')
 	{
-		return ;
+		printf("Uppercase");
 	} 
-	else
+	else if(*pch>='a'&&*pch<='z')
 	{
-		if(x%2==0)
-		{
-			printf("\n%d",x); 
-		}  
-		myfun(x+1);
-		
+		printf("Lowercase");
 	}
 }

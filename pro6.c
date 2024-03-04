@@ -1,19 +1,16 @@
-#include<stdio.h> 
-void myfun(int x);
+#include<stdio.h>
 int main()
 {
-	myfun(20);
-} 
-void myfun(int x) 
-{
-	if(x==10) 
+	int num[5];
+	int*p;
+	p=&num[0]; 
+	int i;
+	for(i=0;i<=4;i++) 
 	{
-	return;	
+		scanf("%u",p+i);
 	} 
-	else 
+	for(i=0;i<=4;i++) 
 	{
-		
-		myfun(x-1);
-		printf("\n%d",x);    // on the back tracing the ans will be on the decending order
+		printf("%d",*(p+i));
 	}
-} 
+}
