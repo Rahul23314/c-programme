@@ -1,19 +1,15 @@
-// o/p-1,2,3,4,5
-#include<stdio.h> 
-void myfun(int x);
+#include<stdio.h>
+void addition (int a,int b);
 int main()
 {
-	myfun(1);
+	int a,b;
+	a=3;
+	b=5;
+	addition(a,b);
 } 
-void myfun(int x)
+void addition(int a,int b)
 {
-	if(x<6)
-	{     printf("%d",x); 
-	     myfun(x+1);
-	
-	} 
-	else
-	{
-	 return ;
-	}
+	int add;
+	add=a+b;
+	printf("The addition is %d",add);
 }

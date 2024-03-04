@@ -1,19 +1,22 @@
-#include<stdio.h> 
-void myfun(int x);
+#include<stdio.h>
+int rad; 
+void area(); 
+void circum();
 int main()
+{   printf("Enter the radius of the circle=");
+	scanf("%d",&rad); 
+	area();
+	circum();
+} 
+void area()
 {
-	myfun(11);
+	float area; 
+	area=rad*3.14*rad;
+	printf("The area of the circle is %f",area);
 }
-void myfun(int x)
+void circum()
 {
-	if(x==21)
-	{ 
-	 return;
-	} 
-	else
-	{  
-	printf("\n%d",x);     // during the recursion 
-	myfun(x+1);
-		
-	}
+	float circum; 
+   circum=rad*3.14*2;
+	printf("\nThe area of the circle is %f",circum);
 }
